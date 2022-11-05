@@ -29,11 +29,22 @@ The main functionality that I added to the snake game was what I call "lava." La
 
 * Current Rubric Points addressed by added functionality (5 minimum) :
   * Object Oriented Programming:
-    * Criteria: The project uses Object Programming techniques => demonstrated mainly by the added files of lava.h/lava.cpp which hold lava related data and methods to perform tasks; also demonstrated by addition of a lava object to the game class (game.h line 30)
+    * Criteria: The project uses Object Programming techniques => demonstrated mainly by the added files of lava.h/lava.cpp which hold lava related data and methods to perform tasks
     * Criteria: Classes use appropriate access specifiers for class members => demonstrated in both lava.h/lava.cpp with the use of both public and private access modifiers
-    * Criteria: Class constructors utilize member initialization lists => demonstrated in lava.h in its constructor
-    * Criteria: Classes abstract implementation details from their interfaces => 
-    * Criteria: Classes encapsulate behavior =>
+    * Criteria: Class constructors utilize member initialization lists => demonstrated in lava.cpp starting at line 4
+    * Criteria: Classes abstract implementation details from their interfaces => demonstrated primarily through the functions "checkPointCollision" and "updateLocation" in lava.cpp/lava.h
+    * Criteria: Classes encapsulate behavior => Grouped all lava-related data and functions into lava.cpp/lava.h; also added getters to snake.h (lines 23/24) to access the grid width and height as necessary for the lava object creation
+
+  * Loops, Functions, I/O:
+    * Criteria: The project demonstrates an understanding of C++ functions and control structures => demonstrated in many instances, but the ones in the lava class are:
+      * While and for loops for both methods in lava.cpp (updateLocation starting line 12; checkPointCollision starting line 39)
+
+  * Memory Management:
+    * Criteria: The poject makes use of references in function declarations => lava.h, line 15
+    * Criteria: The project uses scope/RAII; Criteria: The project uses smart pointers
+      * Both of these concepts were demonstrated by using a shared pointer for the lava object in the game (game.h, line 32)
+      * By using a shared pointer, I am able to allocate its memory when I want (when the size of the snake hits a certain number) while still making sure the lava object memory does not go out of scope until the game's destructor is called, as it is a member variable
+
 
 
 ## Dependencies for Running Locally
