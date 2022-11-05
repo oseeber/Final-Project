@@ -28,7 +28,7 @@ void Lava::updateLocation(Snake& snake, SDL_Point& food) {
             }
             cell.y = y;
         }
-        if (!checkFoodCollision(lava_body, food)) {
+        if (!checkPointCollision(lava_body, food)) {
             return;
         }
         outerLoop:
@@ -36,7 +36,7 @@ void Lava::updateLocation(Snake& snake, SDL_Point& food) {
     }
 }
 
-bool Lava::checkPointCollision(std::vector<SDL_Point> a_vec, SDL_Point b) {
+bool checkPointCollision(std::vector<SDL_Point> a_vec, SDL_Point b) {
     for (SDL_Point &a : a_vec) {
         if (a.x == b.x && a.y == b.y ) {
             return true;

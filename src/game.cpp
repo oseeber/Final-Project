@@ -79,7 +79,14 @@ void Game::startLava() {
 void Game::Update() {
   if (!snake.alive) return;
 
-  snake.Update(lava);
+  snake.Update();
+
+  if (snake.alive && lava!=nullptr) {
+    SDL_Point head_cell{snake.head_x, snake.head_y};
+    if(lava->checkPointCollision(lava->lava_body, head_cell)) {
+      snake.alive = false;
+    }
+  }
 
   if(snake.size > 4 && (snake.size % 4) == 0 && snake.hasSizeChanged) {
     lavaUpdateFlag = true;
