@@ -73,7 +73,7 @@ void Game::PlaceFood() {
 }
 
 void Game::startLava() {
-  lava = std::make_shared<Lava>(snake.grid_width, snake.grid_height);
+  lava = std::make_shared<Lava>(snake.getGridW(), snake.getGridH());
 }
 
 void Game::Update() {
@@ -99,7 +99,7 @@ void Game::Update() {
   }
 
   if (snake.size > 3 && (snake.size % 3) == 0) {
-    lava->updateLocation(snake, food)
+    lava->updateLocation(snake, food);
   }
 }
 

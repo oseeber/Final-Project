@@ -177,6 +177,33 @@ src/game.cpp.s:
 	$(MAKE) -f CMakeFiles/SnakeGame.dir/build.make CMakeFiles/SnakeGame.dir/src/game.cpp.s
 .PHONY : src/game.cpp.s
 
+src/lava.o: src/lava.cpp.o
+
+.PHONY : src/lava.o
+
+# target to build an object file
+src/lava.cpp.o:
+	$(MAKE) -f CMakeFiles/SnakeGame.dir/build.make CMakeFiles/SnakeGame.dir/src/lava.cpp.o
+.PHONY : src/lava.cpp.o
+
+src/lava.i: src/lava.cpp.i
+
+.PHONY : src/lava.i
+
+# target to preprocess a source file
+src/lava.cpp.i:
+	$(MAKE) -f CMakeFiles/SnakeGame.dir/build.make CMakeFiles/SnakeGame.dir/src/lava.cpp.i
+.PHONY : src/lava.cpp.i
+
+src/lava.s: src/lava.cpp.s
+
+.PHONY : src/lava.s
+
+# target to generate assembly for a file
+src/lava.cpp.s:
+	$(MAKE) -f CMakeFiles/SnakeGame.dir/build.make CMakeFiles/SnakeGame.dir/src/lava.cpp.s
+.PHONY : src/lava.cpp.s
+
 src/main.o: src/main.cpp.o
 
 .PHONY : src/main.o
@@ -273,6 +300,9 @@ help:
 	@echo "... src/game.o"
 	@echo "... src/game.i"
 	@echo "... src/game.s"
+	@echo "... src/lava.o"
+	@echo "... src/lava.i"
+	@echo "... src/lava.s"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"

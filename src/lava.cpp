@@ -28,6 +28,7 @@ void Lava::updateLocation(Snake& snake, SDL_Point& food) {
             return;
         }
         outerLoop:
+        continue;
     }
 }
 

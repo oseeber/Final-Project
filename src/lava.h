@@ -8,10 +8,11 @@
 class Lava {
 
     public:
-        Lava(int grid_width, int grid_height) {}
+        Lava(int grid_width, int grid_height);
 
         std::vector<SDL_Point> lava_body;
-
+        bool checkFoodCollision(std::vector<SDL_Point> a_vec, SDL_Point b);
+        void updateLocation(Snake& snake, SDL_Point& food);
     private:
         int _gw;
         int _gh;
@@ -20,9 +21,6 @@ class Lava {
         std::mt19937 engine;
         std::uniform_int_distribution<int> random_w;
         std::uniform_int_distribution<int> random_h;
-
-        void updateLocation(Snake& snake, SDL_Point& food);
-        bool checkFoodCollision(std::vector<SDL_Point> a_vec, SDL_Point b);
         // void updateSize();
 };
 

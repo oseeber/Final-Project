@@ -6,6 +6,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 set(CMAKE_DEPENDS_CHECK_CXX
   "/home/workspace/final_project/CppND-Capstone-Snake-Game/src/controller.cpp" "/home/workspace/final_project/CppND-Capstone-Snake-Game/build/CMakeFiles/SnakeGame.dir/src/controller.cpp.o"
   "/home/workspace/final_project/CppND-Capstone-Snake-Game/src/game.cpp" "/home/workspace/final_project/CppND-Capstone-Snake-Game/build/CMakeFiles/SnakeGame.dir/src/game.cpp.o"
+  "/home/workspace/final_project/CppND-Capstone-Snake-Game/src/lava.cpp" "/home/workspace/final_project/CppND-Capstone-Snake-Game/build/CMakeFiles/SnakeGame.dir/src/lava.cpp.o"
   "/home/workspace/final_project/CppND-Capstone-Snake-Game/src/main.cpp" "/home/workspace/final_project/CppND-Capstone-Snake-Game/build/CMakeFiles/SnakeGame.dir/src/main.cpp.o"
   "/home/workspace/final_project/CppND-Capstone-Snake-Game/src/renderer.cpp" "/home/workspace/final_project/CppND-Capstone-Snake-Game/build/CMakeFiles/SnakeGame.dir/src/renderer.cpp.o"
   "/home/workspace/final_project/CppND-Capstone-Snake-Game/src/snake.cpp" "/home/workspace/final_project/CppND-Capstone-Snake-Game/build/CMakeFiles/SnakeGame.dir/src/snake.cpp.o"

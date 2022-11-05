@@ -19,6 +19,9 @@ class Snake {
   void GrowBody();
   bool SnakeCell(int x, int y);
 
+  int getGridW() {return grid_width;}
+  int getGridH() {return grid_height;}
+
   Direction direction = Direction::kUp;
 
   float speed{0.1f};

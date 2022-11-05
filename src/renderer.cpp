@@ -72,8 +72,8 @@ void Renderer::Render(Snake const snake, SDL_Point const &food, std::shared_ptr<
   SDL_RenderFillRect(sdl_renderer, &block);
 
   //Render Lava
-  if (!lava==nullptr) {
-    SDL_SetRendererDrawColor(sdl_renderer, 0xFF, 0x00, 0x00, 0xFF);
+  if (lava != nullptr) {
+    SDL_SetRenderDrawColor(sdl_renderer, 0xFF, 0x00, 0x00, 0xFF);
     for (SDL_Point const &point : lava->lava_body) {
       block.x = point.x * block.w;
       block.y = point.y * block.h;
