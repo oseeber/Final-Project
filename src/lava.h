@@ -11,6 +11,7 @@ class Lava {
         Lava(int grid_width, int grid_height);
 
         std::vector<SDL_Point> lava_body;
+        bool updateFlag{true};
         bool checkFoodCollision(std::vector<SDL_Point> a_vec, SDL_Point b);
         void updateLocation(Snake& snake, SDL_Point& food);
     private:
