@@ -19,11 +19,14 @@ void Lava::updateLocation(Snake& snake, SDL_Point& food) {
 
         for (int i = 0; i < 3; i++) {
             cell.x += i;
-            cell.y += i;
-            if (snake.SnakeCell(cell.x, cell.y)) {
-                goto outerLoop;
+            for (int j = 0; j < 3; j++) {
+                cell.y += j;
+                if (snake.SnakeCell(cell.x, cell.y)) {
+                    goto outerLoop;
+                }
+                lava_body.push_back(cell);
             }
-            lava_body.push_back(cell);
+            cell.y = y;
         }
         if (!checkFoodCollision(lava_body, food)) {
             return;
