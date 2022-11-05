@@ -8,8 +8,8 @@ In this project, I have extended the functionality of the original "Snake" game.
 
 ## Original Code Structure
 
-* main.cpp: This is where any necessary objects are created to run the game and the game is started from here.
-
+* main.cpp: 
+  * This is where any necessary objects are created to run the game and the game is started from here.
 * controller.cpp/controller.h: 
   * This class handles the user input of the keyboard
 * game.cpp/game.h: 
@@ -21,7 +21,19 @@ In this project, I have extended the functionality of the original "Snake" game.
   * This class contains the variables and functions necessary to update the gameplay screen based off the changes made within the functions of the game class
 
 ## Extended Functionality
+The main functionality that I added to the snake game was what I call "lava." Lava are basically blocks of red that move back and forth over a specified area. If any part of the snake touches the lava, the snake is dead and the game is over. Currently, the game employs only one lava block at a time, but my goal is to add more lava functionality to the game in the coming weeks.
 
+* Added Files:
+  * lava.cpp/lava.h:
+    * This class contains all variables and functions related to the lava block's creatiion and location updates
+
+* Current Rubric Points addressed by added functionality (5 minimum) :
+  * Object Oriented Programming:
+    * Criteria: The project uses Object Programming techniques => demonstrated mainly by the added files of lava.h/lava.cpp which hold lava related data and methods to perform tasks; also demonstrated by addition of a lava object to the game class (game.h line 30)
+    * Criteria: Classes use appropriate access specifiers for class members => demonstrated in both lava.h/lava.cpp with the use of both public and private access modifiers
+    * Criteria: Class constructors utilize member initialization lists => demonstrated in lava.h in its constructor
+    * Criteria: Classes abstract implementation details from their interfaces => 
+    * Criteria: Classes encapsulate behavior =>
 
 
 ## Dependencies for Running Locally

@@ -25,7 +25,7 @@ void Game::Run(Controller const &controller, Renderer &renderer,
     // Input, Update, Render - the main game loop.
     controller.HandleInput(running, snake);
     Update();
-    renderer.Render(snake, food);
+    renderer.Render(snake, food, lava);
 
     frame_end = SDL_GetTicks();
 
@@ -57,12 +57,23 @@ void Game::PlaceFood() {
     y = random_h(engine);
     // Check that the location is not occupied by a snake item before placing
     // food.
+    //Adding another to check to make sure food isn't getting put in lava after lava is created
     if (!snake.SnakeCell(x, y)) {
       food.x = x;
       food.y = y;
+    }
+    if (lava == nullptr) {
       return;
+    } else {
+      if (!lava->checkFoodCollision(lava->lava_body, food)) {
+        return;
+      }
     }
   }
+}
+
+void Game::startLava() {
+  lava = std::make_shared<Lava>(snake.grid_width, snake.grid_height);
 }
 
 void Game::Update() {
@@ -80,6 +91,15 @@ void Game::Update() {
     // Grow snake and increase speed.
     snake.GrowBody();
     snake.speed += 0.02;
+  }
+
+  if (snake.size == 3) {
+    this->startLava();
+    lava->updateLocation(snake, food);
+  }
+
+  if (snake.size > 3 && (snake.size % 3) == 0) {
+    lava->updateLocation(snake, food)
   }
 }
 

@@ -2,10 +2,12 @@
 #define GAME_H
 
 #include <random>
+#include <memory>
 #include "SDL.h"
 #include "controller.h"
 #include "renderer.h"
 #include "snake.h"
+#include "lava.h"
 
 class Game {
  public:
@@ -26,8 +28,11 @@ class Game {
 
   int score{0};
 
+  std::shared_ptr<Lava> lava; //declaring a unique pointer to lava object
+
   void PlaceFood();
   void Update();
+  void startLava();
 };
 
 #endif
