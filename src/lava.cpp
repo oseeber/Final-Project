@@ -12,6 +12,7 @@ Lava::Lava(int grid_width, int grid_height)
 void Lava::updateLocation(Snake& snake, SDL_Point& food) {
     int x, y;
     while(true) {
+        lava_body.clear();
         x = random_w(engine);
         y = random_h(engine);
         SDL_Point cell{x, y};
