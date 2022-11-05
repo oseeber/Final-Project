@@ -82,7 +82,7 @@ void Game::Update() {
   snake.Update();
 
   if(snake.size > 4 && (snake.size % 4) == 0) {
-    lava->updateFlag = true;
+    lavaUpdateFlag = true;
   }
 
   int new_x = static_cast<int>(snake.head_x);
@@ -97,15 +97,15 @@ void Game::Update() {
     snake.speed += 0.02;
   }
 
-  if (snake.size == 4 && lava->updateFlag) {
+  if (snake.size == 4 && lavaUpdateFlag) {
     this->startLava();
     lava->updateLocation(snake, food);
-    lava->updateFlag = false;
+    lavaUpdateFlag = false;
   }
 
-  if (snake.size > 4 && (snake.size % 4) == 0 && lava->updateFlag) {
+  if (snake.size > 4 && (snake.size % 4) == 0 && lavaUpdateFlag) {
     lava->updateLocation(snake, food);
-    lava->updateFlag = false;
+    lavaUpdateFlag = false;
   }
 }
 
