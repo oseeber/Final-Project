@@ -65,7 +65,7 @@ void Game::PlaceFood() {
     if (lava == nullptr) {
       return;
     } else {
-      if (!lava->checkFoodCollision(lava->lava_body, food)) {
+      if (!lava->checkPointCollision(lava->lava_body, food)) {
         return;
       }
     }
@@ -79,7 +79,7 @@ void Game::startLava() {
 void Game::Update() {
   if (!snake.alive) return;
 
-  snake.Update();
+  snake.Update(lava);
 
   if(snake.size > 4 && (snake.size % 4) == 0 && snake.hasSizeChanged) {
     lavaUpdateFlag = true;
