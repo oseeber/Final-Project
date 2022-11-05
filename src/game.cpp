@@ -93,12 +93,12 @@ void Game::Update() {
     snake.speed += 0.02;
   }
 
-  if (snake.size == 3) {
+  if (snake.size == 4) {
     this->startLava();
     lava->updateLocation(snake, food);
   }
 
-  if (snake.size > 3 && (snake.size % 3) == 0) {
+  if (snake.size > 4 && (snake.size % 4) == 0) {
     lava->updateLocation(snake, food);
   }
 }
