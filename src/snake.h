@@ -3,7 +3,6 @@
 
 #include <vector>
 #include <memory>
-#include "lava.h"
 #include "SDL.h"
 
 class Snake {
