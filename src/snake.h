@@ -30,6 +30,7 @@ class Snake {
   float head_x;
   float head_y;
   std::vector<SDL_Point> body;
+  bool hasSizeChanged{false};
 
  private:
   void UpdateHead();

@@ -81,7 +81,7 @@ void Game::Update() {
 
   snake.Update();
 
-  if(snake.size > 4 && (snake.size % 4) == 0) {
+  if(snake.size > 4 && (snake.size % 4) == 0 && snake.hasSizeChanged) {
     lavaUpdateFlag = true;
   }
 

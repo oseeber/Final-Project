@@ -44,6 +44,7 @@ void Snake::UpdateHead() {
 }
 
 void Snake::UpdateBody(SDL_Point &current_head_cell, SDL_Point &prev_head_cell) {
+  hasSizeChanged = false;
   // Add previous head location to vector
   body.push_back(prev_head_cell);
 
@@ -53,6 +54,7 @@ void Snake::UpdateBody(SDL_Point &current_head_cell, SDL_Point &prev_head_cell) 
   } else {
     growing = false;
     size++;
+    hasSizeChanged = true;
   }
 
   // Check if the snake has died.
@@ -63,7 +65,7 @@ void Snake::UpdateBody(SDL_Point &current_head_cell, SDL_Point &prev_head_cell) 
   }
 
   // Another check to see if the snake touched lava
-  
+
 }
 
 void Snake::GrowBody() { growing = true; }
